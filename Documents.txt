@@ -1,0 +1,11 @@
+Test file
+
+1.Customers list shows all customer 
+
+2.if we click on see vehicle link then we can see list of vehicle belongs to that customer
+
+3.if we click on Book Service link then we can book service for that vehicle on that service Due Date
+ => When we book service it will automatically update the service Due date in vehicle table after 3 months
+
+4. We can see service Due Date list for Coming weeks
+ => if we have booked service then they will not appear in Service Due list.
