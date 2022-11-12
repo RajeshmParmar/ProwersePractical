@@ -1,0 +1,44 @@
+﻿@model IEnumerable<AutoMotiveWorkshop.Models.VehicleViewModel>
+
+@{
+    ViewData["Title"] = "Vehicles";
+}
+
+<h1>Vehicles</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ModelName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ServiceDueDate)
+            </th>
+            <th>
+                Book Service
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModelName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ServiceDueDate)
+            </td>
+            <td>
+                @Html.ActionLink("Book Service", "Service", new { id = item.Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

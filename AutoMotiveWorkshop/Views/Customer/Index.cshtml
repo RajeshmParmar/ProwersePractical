@@ -1,0 +1,52 @@
+﻿@model IEnumerable<AutoMotiveWorkshop.Models.CustomerViewModel>
+
+@{
+    ViewData["Title"] = "Customers";
+}
+
+<h1>Customers</h1>
+
+<div style="text-align:right;">
+    <input type="text" />
+    <button value="Search" id="SearchID" onclick="location.href='<%: Url.Action("Action", "Customer") %>'">Search</button>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Ref. No
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNo)
+            </th>
+            <th>Vehicles</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNo)
+            </td>
+            <td>
+                @Html.ActionLink("See Vehicles", "Vehicles", new { id=item.CustomerId }) 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
